@@ -3,24 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video Landing Page</title>
+    <title>Video Player</title>
     <style>
         body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
             margin: 0;
-            overflow: hidden; /* Hide scrollbars */
         }
-        video {
-            width: 100vw; /* Full viewport width */
-            height: 100vh; /* Full viewport height */
-            object-fit: cover; /* Maintain video aspect ratio while covering the entire container */
+        iframe {
+            width: 80%;
+            height: 60vh; /* Adjust the height as needed */
+            border: none;
         }
     </style>
 </head>
 <body>
-    <video autoplay loop muted playsinline>
-        <source src="https://raw.githubusercontent.com/Simwik91/FCB/main/FLY-SKJERM.webm" type="video/webm">
-        <source src="https://example.com/Simwik91/FCB/main/FLY.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
+    <div>
+        <label for="videoUrl">Enter Video URL:</label>
+        <input type="text" id="videoUrl" value="https://simwik91.github.io/FCB/" placeholder="Paste video URL here">
+        <button onclick="playVideo()">Play Video</button>
+    </div>
+
+    <iframe id="videoPlayer"></iframe>
+
+    <script>
+        function playVideo() {
+            var videoUrl = document.getElementById('videoUrl').value;
+            var videoPlayer = document.getElementById('videoPlayer');
+
+            // Update the iframe source
+            videoPlayer.src = videoUrl;
+
+            // Autoplay the video
+            videoPlayer.autoplay = true;
+            videoPlayer.load();
+        }
+
+        // Autoplay the video on page load
+        window.onload = playVideo;
+    </script>
 </body>
 </html>
