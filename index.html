@@ -17,36 +17,10 @@
     </style>
 </head>
 <body>
-    <div>
-        <label for="videoUrl">Enter Video URL:</label>
-        <input type="text" id="videoUrl" value="https://raw.githubusercontent.com/Simwik91/FCB/main/FLY.mp4" placeholder="Paste video URL here">
-        <button onclick="playVideo()">Play Video</button>
-    </div>
-
-    <video id="mainVideo" autoplay loop muted playsinline onended="replayVideo()">
+    <video autoplay loop muted playsinline>
+        <source src="https://raw.githubusercontent.com/Simwik91/FCB/main/FLY-SKJERM.webm" type="video/webm">
+        <source src="https://example.com/Simwik91/FCB/main/FLY-SKJERM.webm" type="video/mp4">
         Your browser does not support the video tag.
     </video>
-
-    <script>
-        function playVideo() {
-            var videoUrl = document.getElementById('videoUrl').value;
-            var mainVideo = document.getElementById('mainVideo');
-
-            // Update the video source dynamically based on user input
-            mainVideo.src = videoUrl;
-
-            // Load and play the video
-            mainVideo.load();
-            mainVideo.play();
-        }
-
-        function replayVideo() {
-            var mainVideo = document.getElementById('mainVideo');
-
-            // Replay the video when it ends
-            mainVideo.currentTime = 0;
-            mainVideo.play();
-        }
-    </script>
 </body>
 </html>
