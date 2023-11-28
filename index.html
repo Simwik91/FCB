@@ -3,42 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video Webpage</title>
+    <title>Video Landing Page</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
             overflow: hidden; /* Hide scrollbars */
         }
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 10px;
-            text-align: center;
-        }
-        main {
+        video {
             width: 100vw; /* Full viewport width */
             height: 100vh; /* Full viewport height */
-            overflow: hidden;
-        }
-        video {
-            width: 100%;
-            height: 100%;
             object-fit: cover; /* Maintain video aspect ratio while covering the entire container */
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Video Webpage</h1>
-    </header>
-    <main>
-        <video autoplay loop muted playsinline>
-            <source src="https://raw.githubusercontent.com/Simwik91/FCB/main/FLY.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    </main>
+    <video autoplay loop muted playsinline>
+        <source src="https://raw.githubusercontent.com/Simwik91/FCB/main/FLY.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
 </body>
 </html>
