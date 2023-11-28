@@ -10,6 +10,7 @@
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
+            overflow: hidden; /* Hide scrollbars */
         }
         header {
             background-color: #333;
@@ -18,17 +19,14 @@
             text-align: center;
         }
         main {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100vw; /* Full viewport width */
+            height: 100vh; /* Full viewport height */
+            overflow: hidden;
         }
         video {
             width: 100%;
-            height: auto;
-            display: block;
-            margin: 10px 0;
+            height: 100%;
+            object-fit: cover; /* Maintain video aspect ratio while covering the entire container */
         }
     </style>
 </head>
@@ -37,8 +35,7 @@
         <h1>Video Webpage</h1>
     </header>
     <main>
-        <h2>Watch the Video</h2>
-        <video controls autoplay loop>
+        <video autoplay loop muted playsinline>
             <source src="https://raw.githubusercontent.com/Simwik91/FCB/main/FLY.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
